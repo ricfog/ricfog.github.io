@@ -4,324 +4,425 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Riccardo Fogliato</title>
-  <link rel="stylesheet"
-  href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <meta name="description" content="Riccardo Fogliato — senior research scientist on the Responsible AI team at Microsoft Core AI. Research on LLM safety, evaluation, and statistical methods.">
+  <meta name="author" content="Riccardo Fogliato">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Riccardo Fogliato">
+  <meta property="og:description" content="Senior research scientist on the Responsible AI team at Microsoft Core AI. LLM safety, evaluation, and statistical methods.">
+  <meta property="og:url" content="https://ricfog.github.io/">
+  <meta property="og:image" content="https://ricfog.github.io/images/img.jpeg">
+  <meta name="twitter:card" content="summary">
+
+  <link rel="icon" href="images/img.jpeg" type="image/jpeg">
+
   <style>
-    .c1-ui-state-hover {
-      background-color: yellow !important;
-      padding: 5px !important;
+    :root {
+      --bg: #ffffff;
+      --fg: #1a1a1a;
+      --muted: #555;
+      --link: #0b5cad;
+      --rule: #e5e5e5;
+      --btn-bg: #f2f2f2;
     }
-    .no-padding {
-      padding-left: 0;
-      padding-right: 0;
+    @media (prefers-color-scheme: dark) {
+      :root[data-theme="dark"] {
+        --bg: #14181d;
+        --fg: #e6e6e6;
+        --muted: #a3a3a3;
+        --link: #6ea8e6;
+        --rule: #2a2f36;
+        --btn-bg: #232830;
+      }
     }
+    :root[data-theme="dark"] {
+      --bg: #14181d;
+      --fg: #e6e6e6;
+      --muted: #a3a3a3;
+      --link: #6ea8e6;
+      --rule: #2a2f36;
+      --btn-bg: #232830;
+    }
+
+    .theme-toggle {
+      position: fixed;
+      top: 0.75rem;
+      right: 0.75rem;
+      width: 2.25rem;
+      height: 2.25rem;
+      padding: 0;
+      border: 1px solid var(--rule);
+      border-radius: 50%;
+      background: var(--btn-bg);
+      color: var(--fg);
+      font-size: 1.05rem;
+      line-height: 1;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .theme-toggle:hover, .theme-toggle:focus { border-color: var(--link); outline: none; }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html { -webkit-text-size-adjust: 100%; }
     body {
-      max-width: 800px;
       margin: 0 auto;
-      padding: 20px;
+      padding: 1.5rem 1.25rem 3rem;
+      max-width: 50rem;
+      font: 1rem/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI",
+            Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: var(--fg);
+      background: var(--bg);
     }
-    .text-left-md {
-      text-align: left;
+
+    h1 { font-size: 1.75rem; margin: 0 0 1rem; }
+    h2 {
+      font-size: 1.15rem;
+      margin: 2rem 0 0.75rem;
+      padding-bottom: 0.25rem;
+      border-bottom: 1px solid var(--rule);
     }
-    .image-left-md {
-      float: left;
-      margin-right: 10px;
-      margin-bottom: 10px;
+    p { margin: 0 0 0.85rem; }
+
+    a { color: var(--link); text-decoration: none; }
+    a:hover, a:focus { text-decoration: underline; }
+
+    .intro {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 1.5rem;
+      align-items: start;
     }
+    .intro img {
+      width: 100%;
+      max-width: 220px;
+      height: auto;
+      border-radius: 4px;
+      display: block;
+    }
+    .links a + a::before { content: " / "; color: var(--muted); }
+
+    @media (max-width: 600px) {
+      .intro { grid-template-columns: 1fr; }
+      .intro img { max-width: 180px; }
+    }
+
+    ul.papers { list-style: none; padding: 0; margin: 0; }
+    ul.papers > li {
+      padding: 0.6rem 0;
+      border-bottom: 1px solid var(--rule);
+    }
+    ul.papers > li:last-child { border-bottom: 0; }
+    ul.papers .title { font-weight: 600; }
+    ul.papers .authors { color: var(--muted); font-style: italic; }
+    ul.papers .venue { color: var(--muted); }
+    ul.papers .links a + a::before { content: " · "; color: var(--muted); }
+    ul.papers .note { color: var(--muted); font-size: 0.9rem; }
+
+    code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
   </style>
 </head>
 <body>
-
-  <div class="container" style="font-size: 14px;">
-    <div class="row justify-content-center">
-      <div class="col-11">
-        <h1>Riccardo Fogliato</h1>
-      </div>
-      <div class="col-md-4 image-left-md">
-        <img src="images/img.jpeg" alt="" style="width: 220px; height: 280px;"
-        class="image-left-md">
-        <p>
-          <!-- <a
-          href="docs/resume_ricfog_25.pdf">Resume</a><br>
-          <a href="https://github.com/ricfog" target="_blank">GitHub</a><br>
-          <a href="https://www.linkedin.com/in/riccardo-fogliato-b30071134/"
-          target="_blank">LinkedIn</a><br>
-          <a
-          href="https://scholar.google.com/citations?user=pYPowr8AAAAJ&hl=en">Google
-          Scholar</a> -->
-        </p>
-      </div>
-      <div class="col-md-7 text-left-md">
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('theme');
+        if (saved === 'dark' || saved === 'light') {
+          document.documentElement.setAttribute('data-theme', saved);
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <button id="theme-toggle" class="theme-toggle" type="button"
+          aria-label="Toggle color theme" title="Toggle color theme">🌓</button>
+  <header>
+    <h1>Riccardo Fogliato</h1>
+    <div class="intro">
+      <img src="images/img.jpeg" alt="Portrait of Riccardo Fogliato">
+      <div>
         <p>I am a senior research scientist on the Responsible AI team at
-        Microsoft Core AI, working on LLM safety. Previously, I was an applied
-        scientist on the Responsible AI team at AWS, where I worked on
-        staistical methods for evaluating language and vision models.</p>
+        Microsoft Core AI, working on testing of LLM safety. Previously, I was
+        an applied scientist on the Responsible AI team at AWS, where I worked
+        on statistical methods for evaluating language and vision models.</p>
 
         <p>I received a PhD in Statistics from CMU under the supervision of
-        Alexandra Chouldechova and Zachary Lipton. During the PhD, I interned at
-        MSR with Besmira Nushi, Kori Inkpen, and Eric Horvitz. I also was a
+        Alexandra Chouldechova and Zachary Lipton. During the PhD, I interned
+        at MSR with Besmira Nushi, Kori Inkpen, and Eric Horvitz. I also was a
         research fellow at the Partnership on AI where I worked with Alice
-        Xiang. Before going to CMU, I studied at Collegio Carlo Alberto, at the
-        Universities of Torino and Padova, and spent some time at ENS
+        Xiang. Before going to CMU, I studied at Collegio Carlo Alberto, at
+        the Universities of Torino and Padova, and spent some time at ENS
         Cachan.</p>
 
         <p>You can contact me at riccardofogliato [at] gmail [dot] com.</p>
 
-         <a
-          href="docs/resume_ricfog_25.pdf">Resume</a> / 
-          <a href="https://github.com/ricfog" target="_blank">GitHub</a> / 
-          <a href="https://www.linkedin.com/in/riccardo-fogliato-b30071134/"
-          target="_blank">LinkedIn</a> / 
-          <a
-          href="https://scholar.google.com/citations?user=pYPowr8AAAAJ&hl=en">Google
-          Scholar</a>
+        <p class="links">
+          <a href="docs/resume_ricfog_25.pdf">Resume</a>
+          <a href="https://github.com/ricfog" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://www.linkedin.com/in/riccardo-fogliato-b30071134/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://scholar.google.com/citations?user=pYPowr8AAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>
+        </p>
       </div>
     </div>
-    <div class="col-12">
-               <div class="page-header" style="padding-top:0.2cm;"></div>
-              <h3>Papers</h3>
-              <ul>
-              <li> 
-                <strong>Play Favorites: A Statistical Method to Measure Self-Bias in LLM-as-a-Judge</strong><br>
-              <em>Evangelia Spiliopoulou*, Riccardo Fogliato*, et al
-              </em> <br>
-              arXiv
-              <a href="https://arxiv.org/abs/2508.06709"
-              target="_blank">arXiv</a>
-            </li>
-              <li> 
-                <strong>Persona-Augmented Benchmarking: Evaluating LLMs Across Diverse Writing Styles</strong><br>
-              <em>Kimberly Truong, Riccardo Fogliato, Hoda Heidari, Steven Wu
-              </em> <br>
-              EMNLP 2025
-              <a href="https://arxiv.org/abs/2507.22168"
-              target="_blank">arXiv</a>
-            </li>
-              <li> 
-                <strong>Stronger Neyman Regret Guarantees for Adaptive Experimental Design</strong><br>
-              <em>Georgy Noarov, Riccardo Fogliato, Martin Bertran, Aaron Roth
-              </em> <br>
-              ICML 2025
-              <a href="https://arxiv.org/abs/2502.17427"
-              target="_blank">arXiv</a>
-              <a href="https://github.com/amazon-science/adaptive-abtester"
-              target="_blank">code</a>
-            </li>
-                          <li> 
-                <strong>Improving LLM Group Fairness on Tabular Data via In-Context Learning</strong><br>
-              <em>V. Cherepanova, CJ Lee, N. Akpinar, R. Fogliato, M. Bertran, M. Kearns, J. Zou
-              </em> <br>
-              AIES 2025 <a href="https://arxiv.org/abs/2412.04642"
-              target="_blank">arXiv</a>
-            </li>
-                <li> 
-                  <strong>Precise Model Benchmarking with Only a Few Observations</strong><br>
-                <em>Riccardo Fogliato, Pratik Patil, Nil-Jana Akpinar, Mathew Monfort
-                </em> <br>
-                EMNLP 2024
-                <a href="https://arxiv.org/pdf/2410.05222"
-                target="_blank">arXiv</a>
-              </li>
-                <li> 
-                  <strong>A Framework for Efficient Model Evaluation through Stratification, Sampling, and Estimation</strong><br>
-                <em>Riccardo Fogliato, Pratik Patil, Mathew Monfort, Pietro Perona
-                </em> 
-                <br> ECCV 2024
-                <a href="http://arxiv.org/abs/2406.07320"
-                target="_blank">arXiv</a>
-                <a href="https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/12117.pdf"
-                target="_blank">ECCV</a> 
-                <a href="https://github.com/amazon-science/ssepy"
-                target="_blank">code</a> 
-              </li>
+  </header>
 
-                <li>
-                <strong>Multicalibration for Confidence Scoring in
-                LLMs</strong><br>
-          <em>Gianluca Detommaso, Martin Bertran*, Riccardo Fogliato*, Aaron
-          Roth</em> 
-          <br> ICML 2024
-          <a href="https://arxiv.org/pdf/2404.04689.pdf"
-          target="_blank">arXiv</a>
-          <a href="https://github.com/gianlucadetommaso/caliber"
-          target="_blank">code</a>
+  <main>
+    <section aria-labelledby="papers">
+      <h2 id="papers">Papers</h2>
+      <ul class="papers">
+
+        <li>
+          <span class="title">Many AI Analysts, One Dataset: Navigating the Agentic Data Science Multiverse</span><br>
+          <span class="authors">Martin Bertran, Riccardo Fogliato, Zhiwei Steven Wu</span><br>
+          <span class="venue">arXiv</span>
+          <span class="links"> · <a href="https://arxiv.org/abs/2602.18710" target="_blank" rel="noopener" aria-label="Many AI Analysts — arXiv">arXiv</a></span>
         </li>
-      
-                <li>
-                  <strong>Confidence Intervals for Error Rates in 1:1 Matching
-                  Tasks: Critical Statistical Analysis and
-                  Recommendations</strong><br>
-                  <em>Riccardo Fogliato, Pratik Patil, Pietro Perona</em><br>
-                  International Journal of Computer Vision 
-                  <a href="https://arxiv.org/abs/2306.01198"
-                  target="_blank">arXiv (w/ power analysis in C.5)</a>
-                  <a href="https://link.springer.com/article/10.1007/s11263-024-02078-8"
-                  target="_blank">IJCV</a>
-                  <a href="https://github.com/awslabs/cis-matching-tasks"
-                  target="_blank">code</a>
-                  <a href="https://pypi.org/project/cimat/"
-                  target="_blank">PyPI</a>
-                </li>
-                <li> <strong> Estimating the Likelihood of Arrest from Police
-                Records in Presence of Unreported Crimes </strong>
-                  <br> <em>R. Fogliato, AK Kuchibhotla, Z.
-                  Lipton, D. Nagin, A. Xiang, and A.
-                  Chouldechova</em>
-                   <br> Annals of Applied Statistics <a
-                   href="http://arxiv.org/abs/2310.07935"
-                   target="_blank">arXiv</a> <a
-                   href="https://projecteuclid.org/journals/annals-of-applied-statistics/volume-18/issue-2/Estimating-the-likelihood-of-arrest-from-police-records-in-presence/10.1214/23-AOAS1833.short"
-                   target="_blank">AOAS</a> <a
-                   href="https://github.com/ricfog/arrests-with-unreported-crimes"
-                   target="_blank">code</a> </li>
-                <li> <strong> The Progression of Disparities within the Criminal
-                Justice System: Differential Enforcement and Risk Assessment
-                Instruments </strong>
-                  <br> <em>M. Zilka, R. Fogliato, J. Hron, B.
-                  Butcher, C. Ashurst, A. Weller</em>
-                   <br> FAccT 2023 <a
-                   href="https://arxiv.org/abs/2305.07575">arXiv</a> </li>
-      
-                <li> <strong> Homophily and Incentive Effects in Use of
-                Algorithms </strong>
-                  <br> <em>Riccardo Fogliato, Sina Fazelpour, Shantanu Gupta,
-                  Zachary Lipton, David Danks</em>
-                   <br> CogSci 2022 <a
-                   href="https://arxiv.org/abs/2205.09701">arXiv</a> </li>
 
-                   <li> 
-                    <strong>Human Discernment of Algorithmic Errors: A Case Study in Child
-                    Welfare</strong><br>
-                  <em>Maria De-Arteaga*, Riccardo Fogliato*, and Alexandra Chouldechova
-                  </em> 
-                  <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4050125"
-                  target="_blank">SSRN</a>
-                </li>
-      
-                <li> <strong> Who Goes First? Influences of Human-AI Workflow on
-                Decision Making in Clinical Imaging </strong>
-                  <br> <em>R. Fogliato, S. Chappidi, M. Fitzke,
-                  M. Parkinson, D. Wilson, P. Fisher, M. Lungren,
-                  E. Horvitz, K. Inkpen, B. Nushi</em>
-                   <br> FAccT 2022 <a
-                   href="https://arxiv.org/abs/2205.09696">arXiv</a>
-                  <a href="https://github.com/microsoft/Exp-HAIC/">platform</a>
-                </li>
-      
-                <li> <strong> Racial Disparities in the Enforcement of Marijuana
-                Violations in the US</strong>
-                  <br> <em>Bradley Butcher, Chris Robinson, Miri Zilka, Riccardo
-                  Fogliato, Carolyn Ashurst, Adrian Weller</em>
-                   <br> AIES 2022 <a href="https://arxiv.org/abs/2203.11771"
-                   target="_blank">arXiv</a> <a
-                   href="https://github.com/wearepal/NIBRS">code</a></li>
-      
-      
-                <li> <strong> On the Validity of Arrest as a Proxy for Offense:
-                Race and the Likelihood of Arrest for Violent Crimes
-                  </strong> <br> <em> Riccardo Fogliato, Alice Xiang, Zachary
-                  Lipton, Daniel Nagin, Alexandra Chouldechova</em>
-                  <br>
-                  AIES 2021 (oral) <a href="https://arxiv.org/abs/2105.04953"
-                  target="_blank">arXiv</a> <a
-                  href="https://dl.acm.org/doi/10.1145/3461702.3462538"
-                  target="_blank">ACM</a> <a
-                  href="https://github.com/ricfog/on-the-validity-of-arrest">code</a></li>
-      
-                <li> <strong> The Impact of Algorithmic Risk Assessments on
-                Human Predictions and its Analysis via Crowdsourcing Studies
-                  </strong> <br> <em> Riccardo Fogliato, Alexandra Chouldechova,
-                  Zachary Lipton</em> <br>
-                  CSCW 2021 <a href="https://arxiv.org/abs/2109.01443">arXiv</a>
-                  <a href="https://dl.acm.org/doi/10.1145/3479572">ACM</a> <a
-                  href="https://github.com/ricfog/the-impact-of-algorithmic-rais">data+code</a></li>
-                  <li>
-                    <strong><code>maars</code>: an <code>R</code> implementation of Models
-                    As Approximations</strong><br>
-                    <em>Riccardo Fogliato*, Shamindra Shrotriya*, and Arun Kumar
-                    Kuchibhotla</em>
-                    <a href="https://github.com/shamindras/maars" target="_blank">code</a>
-                    <a href="https://arxiv.org/abs/2106.11188" target="_blank">arXiv</a>
-                    <a href="https://www.youtube.com/watch?v=CaV522U1Ju0&amp;t=550s"
-                    target="_blank">talk</a>
-                  </li>
-                <li> <strong> Uncertainty as a Form of Transparency: Measuring,
-                Communicating, and Using Uncertainty </strong> <br>
-                  <em>
-                    U. Bhatt, Y. Zhang, J. Antorán, Q.V. Liao, P. Sattigeri, R.
-                    Fogliato, G.G. Melançon, R. Krishnan, J. Stanley, O. Tickoo,
-                    L. Nachman, R. Chunara, A. Weller, A. Xiang</em> <br> AIES
-                    2021 <a href="https://arxiv.org/abs/2011.07586"
-                    target="_blank">arXiv</a> <a
-                    href="https://dl.acm.org/doi/10.1145/3461702.3462571"
-                    target="_blank">ACM</a></li>
-                <li> <strong> Lessons from the Deployment of an Algorithmic Tool
-                in Child Welfare </strong> <br> <em> Riccardo Fogliato*, Maria
-                De-Arteaga*, Alexandra Chouldechova</em> <br> Fair
-                &amp; Responsible AI Workshop, CHI 2020
-                  <a href="http://fair-ai.owlstown.com/publications/1422"
-                  target="_blank">workshop</a> </li>
-                <li> <strong> A Case for Humans-in-the-Loop: Decisions in the
-                Presence of Erroneous Algorithmic Scores </strong> <br>
-                  <em>
-                    Maria De-Arteaga*, Riccardo Fogliato*, Alexandra
-                    Chouldechova (* co-first)</em> <br> CHI 2020 <a
-                    href="https://arxiv.org/abs/2002.08035" target="_blank">
-                    arXiv</a> <a
-                    href="https://dl.acm.org/doi/abs/10.1145/3313831.3376638"
-                    target="_blank">ACM</a> <a
-                    href="https://medium.com/can-humans-catch-errors-in-risk-assessment-scores/a-case-for-humans-in-the-loop-decisions-in-the-presence-of-erroneous-algorithmic-scores-fca17379e928"
-                    target="_blank">Medium post</a></li>
-                <li> <strong> Fairness Evaluation in the Presence of Biased
-                Noisy Labels </strong> <br> <em> Riccardo Fogliato, Max G'Sell,
-                Alexandra Chouldechova</em> <br> AISTATS 2020 <a
-                href="https://arxiv.org/abs/2003.13808"
-                target="_blank">arXiv</a> <a
-                href="http://proceedings.mlr.press/v108/fogliato20a.html"
-                target="_blank">PMLR</a></li>
-                <li> <strong> TRAP: A Predictive Framework for Trail Running
-                Assessment of Performance </strong> <br> <em> Riccardo Fogliato,
-                Natalia Oliveira, Ronald Yurko </em> <br> Journal of
-                Quantitative Analysis in Sports <a
-                href="https://arxiv.org/abs/2002.01328"
-                target="_blank">arXiv</a> <a
-                href="https://www.degruyter.com/view/journals/jqas/ahead-of-print/article-10.1515-jqas-2020-0013/article-10.1515-jqas-2020-0013.xml"
-                target="_blank">JQAS</a> <a
-                href="https://www.youtube.com/watch?v=GPjBnIwrtKE"> Talk @ MIT
-                SSAC </a>
-                  <br> <sup>†</sup> Best poster award at NESSIS 2019 and at
-                  CMSAC 2019 (1 of 4) <a
-                  href="files/TRAP_NESSIS_19.pdf">poster</a></li>
-      
-                <li> <strong> Trajectories of Prescription Opioids Filled Over
-                Time </strong> <br> <em> J. Elmer, R. Fogliato, N. Setia, W.
-                Mui, M. Lynch, E. Hulsey, D. Nagin </em> <br> PLOS one 2019 <a
-                href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0222677"
-                target="_blank">
-                    PLOS</a> </li>
-              </ul>
-      
-      
-              <div class="page-header" style="padding-top:0.1cm;">
-                <h3>Misc</h3>
-              </div>
-              <!-- <ul> -->
-      
-      
-                <li> <strong> Why PATTERN Should Not Be Used: The Perils of
-                Using Algorithmic Risk Assessment Tools During COVID-19
-                  </strong> <br>
-                  <em> Riccardo Fogliato, Alice Xiang, Alexandra Chouldechova
-                  </em> <br> Issue brief of the Partnership on AI
-                  <a
-                  href="http://partnershiponai.org/wp-content/uploads/2021/07/Why-PATTERN-Should-Not-Be-Used.pdf"
-                  target="_blank">issue brief</a> </li>
-              <!-- </ul> -->
-            </div>
+        <li>
+          <span class="title">Play Favorites: A Statistical Method to Measure Self-Bias in LLM-as-a-Judge</span><br>
+          <span class="authors">Evangelia Spiliopoulou*, Riccardo Fogliato*, et al.</span><br>
+          <span class="venue">arXiv</span>
+          <span class="links"> · <a href="https://arxiv.org/abs/2508.06709" target="_blank" rel="noopener" aria-label="Play Favorites — arXiv">arXiv</a></span>
+        </li>
 
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script>
+        <li>
+          <span class="title">Persona-Augmented Benchmarking: Evaluating LLMs Across Diverse Writing Styles</span><br>
+          <span class="authors">Kimberly Truong, Riccardo Fogliato, Hoda Heidari, Steven Wu</span><br>
+          <span class="venue">EMNLP 2025</span>
+          <span class="links"> · <a href="https://arxiv.org/abs/2507.22168" target="_blank" rel="noopener" aria-label="Persona-Augmented Benchmarking — arXiv">arXiv</a></span>
+        </li>
 
+        <li>
+          <span class="title">Stronger Neyman Regret Guarantees for Adaptive Experimental Design</span><br>
+          <span class="authors">Georgy Noarov, Riccardo Fogliato, Martin Bertran, Aaron Roth</span><br>
+          <span class="venue">ICML 2025</span>
+          <span class="links">
+            · <a href="https://arxiv.org/abs/2502.17427" target="_blank" rel="noopener" aria-label="Stronger Neyman Regret — arXiv">arXiv</a>
+            <a href="https://github.com/amazon-science/adaptive-abtester" target="_blank" rel="noopener" aria-label="Stronger Neyman Regret — code">code</a>
+          </span>
+        </li>
+
+        <li>
+          <span class="title">Improving LLM Group Fairness on Tabular Data via In-Context Learning</span><br>
+          <span class="authors">V. Cherepanova, CJ Lee, N. Akpinar, R. Fogliato, M. Bertran, M. Kearns, J. Zou</span><br>
+          <span class="venue">AIES 2025</span>
+          <span class="links"> · <a href="https://arxiv.org/abs/2412.04642" target="_blank" rel="noopener" aria-label="LLM Group Fairness — arXiv">arXiv</a></span>
+        </li>
+
+        <li>
+          <span class="title">Precise Model Benchmarking with Only a Few Observations</span><br>
+          <span class="authors">Riccardo Fogliato, Pratik Patil, Nil-Jana Akpinar, Mathew Monfort</span><br>
+          <span class="venue">EMNLP 2024</span>
+          <span class="links"> · <a href="https://arxiv.org/pdf/2410.05222" target="_blank" rel="noopener" aria-label="Precise Model Benchmarking — arXiv">arXiv</a></span>
+        </li>
+
+        <li>
+          <span class="title">A Framework for Efficient Model Evaluation through Stratification, Sampling, and Estimation</span><br>
+          <span class="authors">Riccardo Fogliato, Pratik Patil, Mathew Monfort, Pietro Perona</span><br>
+          <span class="venue">ECCV 2024</span>
+          <span class="links">
+            · <a href="http://arxiv.org/abs/2406.07320" target="_blank" rel="noopener" aria-label="Stratification Sampling Estimation — arXiv">arXiv</a>
+            <a href="https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/12117.pdf" target="_blank" rel="noopener" aria-label="Stratification Sampling Estimation — ECCV">ECCV</a>
+            <a href="https://github.com/amazon-science/ssepy" target="_blank" rel="noopener" aria-label="Stratification Sampling Estimation — code">code</a>
+          </span>
+        </li>
+
+        <li>
+          <span class="title">Multicalibration for Confidence Scoring in LLMs</span><br>
+          <span class="authors">Gianluca Detommaso, Martin Bertran*, Riccardo Fogliato*, Aaron Roth</span><br>
+          <span class="venue">ICML 2024</span>
+          <span class="links">
+            · <a href="https://arxiv.org/pdf/2404.04689.pdf" target="_blank" rel="noopener" aria-label="Multicalibration — arXiv">arXiv</a>
+            <a href="https://github.com/gianlucadetommaso/caliber" target="_blank" rel="noopener" aria-label="Multicalibration — code">code</a>
+          </span>
+        </li>
+
+        <li>
+          <span class="title">Confidence Intervals for Error Rates in 1:1 Matching Tasks: Critical Statistical Analysis and Recommendations</span><br>
+          <span class="authors">Riccardo Fogliato, Pratik Patil, Pietro Perona</span><br>
+          <span class="venue">International Journal of Computer Vision</span>
+          <span class="links">
+            · <a href="https://arxiv.org/abs/2306.01198" target="_blank" rel="noopener" aria-label="CIs for 1:1 Matching — arXiv">arXiv (w/ power analysis in C.5)</a>
+            <a href="https://link.springer.com/article/10.1007/s11263-024-02078-8" target="_blank" rel="noopener" aria-label="CIs for 1:1 Matching — IJCV">IJCV</a>
+            <a href="https://github.com/awslabs/cis-matching-tasks" target="_blank" rel="noopener" aria-label="CIs for 1:1 Matching — code">code</a>
+            <a href="https://pypi.org/project/cimat/" target="_blank" rel="noopener" aria-label="CIs for 1:1 Matching — PyPI">PyPI</a>
+          </span>
+        </li>
+
+        <li>
+          <span class="title">Estimating the Likelihood of Arrest from Police Records in Presence of Unreported Crimes</span><br>
+          <span class="authors">R. Fogliato, AK Kuchibhotla, Z. Lipton, D. Nagin, A. Xiang, A. Chouldechova</span><br>
+          <span class="venue">Annals of Applied Statistics</span>
+          <span class="links">
+            · <a href="http://arxiv.org/abs/2310.07935" target="_blank" rel="noopener" aria-label="Likelihood of Arrest — arXiv">arXiv</a>
+            <a href="https://projecteuclid.org/journals/annals-of-applied-statistics/volume-18/issue-2/Estimating-the-likelihood-of-arrest-from-police-records-in-presence/10.1214/23-AOAS1833.short" target="_blank" rel="noopener" aria-label="Likelihood of Arrest — AOAS">AOAS</a>
+            <a href="https://github.com/ricfog/arrests-with-unreported-crimes" target="_blank" rel="noopener" aria-label="Likelihood of Arrest — code">code</a>
+          </span>
+        </li>
+
+        <li>
+          <span class="title">The Progression of Disparities within the Criminal Justice System: Differential Enforcement and Risk Assessment Instruments</span><br>
+          <span class="authors">M. Zilka, R. Fogliato, J. Hron, B. Butcher, C. Ashurst, A. Weller</span><br>
+          <span class="venue">FAccT 2023</span>
+          <span class="links"> · <a href="https://arxiv.org/abs/2305.07575" target="_blank" rel="noopener" aria-label="Progression of Disparities — arXiv">arXiv</a></span>
+        </li>
+
+        <li>
+          <span class="title">Homophily and Incentive Effects in Use of Algorithms</span><br>
+          <span class="authors">Riccardo Fogliato, Sina Fazelpour, Shantanu Gupta, Zachary Lipton, David Danks</span><br>
+          <span class="venue">CogSci 2022</span>
+          <span class="links"> · <a href="https://arxiv.org/abs/2205.09701" target="_blank" rel="noopener" aria-label="Homophily — arXiv">arXiv</a></span>
+        </li>
+
+        <li>
+          <span class="title">Human Discernment of Algorithmic Errors: A Case Study in Child Welfare</span><br>
+          <span class="authors">Maria De-Arteaga*, Riccardo Fogliato*, Alexandra Chouldechova</span><br>
+          <span class="links"><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4050125" target="_blank" rel="noopener" aria-label="Human Discernment — SSRN">SSRN</a></span>
+        </li>
+
+        <li>
+          <span class="title">Who Goes First? Influences of Human-AI Workflow on Decision Making in Clinical Imaging</span><br>
+          <span class="authors">R. Fogliato, S. Chappidi, M. Fitzke, M. Parkinson, D. Wilson, P. Fisher, M. Lungren, E. Horvitz, K. Inkpen, B. Nushi</span><br>
+          <span class="venue">FAccT 2022</span>
+          <span class="links">
+            · <a href="https://arxiv.org/abs/2205.09696" target="_blank" rel="noopener" aria-label="Who Goes First — arXiv">arXiv</a>
+            <a href="https://github.com/microsoft/Exp-HAIC/" target="_blank" rel="noopener" aria-label="Who Goes First — platform">platform</a>
+          </span>
+        </li>
+
+        <li>
+          <span class="title">Racial Disparities in the Enforcement of Marijuana Violations in the US</span><br>
+          <span class="authors">Bradley Butcher, Chris Robinson, Miri Zilka, Riccardo Fogliato, Carolyn Ashurst, Adrian Weller</span><br>
+          <span class="venue">AIES 2022</span>
+          <span class="links">
+            · <a href="https://arxiv.org/abs/2203.11771" target="_blank" rel="noopener" aria-label="Marijuana Enforcement — arXiv">arXiv</a>
+            <a href="https://github.com/wearepal/NIBRS" target="_blank" rel="noopener" aria-label="Marijuana Enforcement — code">code</a>
+          </span>
+        </li>
+
+        <li>
+          <span class="title">On the Validity of Arrest as a Proxy for Offense: Race and the Likelihood of Arrest for Violent Crimes</span><br>
+          <span class="authors">Riccardo Fogliato, Alice Xiang, Zachary Lipton, Daniel Nagin, Alexandra Chouldechova</span><br>
+          <span class="venue">AIES 2021 (oral)</span>
+          <span class="links">
+            · <a href="https://arxiv.org/abs/2105.04953" target="_blank" rel="noopener" aria-label="Validity of Arrest — arXiv">arXiv</a>
+            <a href="https://dl.acm.org/doi/10.1145/3461702.3462538" target="_blank" rel="noopener" aria-label="Validity of Arrest — ACM">ACM</a>
+            <a href="https://github.com/ricfog/on-the-validity-of-arrest" target="_blank" rel="noopener" aria-label="Validity of Arrest — code">code</a>
+          </span>
+        </li>
+
+        <li>
+          <span class="title">The Impact of Algorithmic Risk Assessments on Human Predictions and its Analysis via Crowdsourcing Studies</span><br>
+          <span class="authors">Riccardo Fogliato, Alexandra Chouldechova, Zachary Lipton</span><br>
+          <span class="venue">CSCW 2021</span>
+          <span class="links">
+            · <a href="https://arxiv.org/abs/2109.01443" target="_blank" rel="noopener" aria-label="Impact of RAIs — arXiv">arXiv</a>
+            <a href="https://dl.acm.org/doi/10.1145/3479572" target="_blank" rel="noopener" aria-label="Impact of RAIs — ACM">ACM</a>
+            <a href="https://github.com/ricfog/the-impact-of-algorithmic-rais" target="_blank" rel="noopener" aria-label="Impact of RAIs — data and code">data+code</a>
+          </span>
+        </li>
+
+        <li>
+          <span class="title"><code>maars</code>: an <code>R</code> implementation of Models As Approximations</span><br>
+          <span class="authors">Riccardo Fogliato*, Shamindra Shrotriya*, Arun Kumar Kuchibhotla</span>
+          <span class="links">
+            · <a href="https://arxiv.org/abs/2106.11188" target="_blank" rel="noopener" aria-label="maars — arXiv">arXiv</a>
+            <a href="https://github.com/shamindras/maars" target="_blank" rel="noopener" aria-label="maars — code">code</a>
+            <a href="https://www.youtube.com/watch?v=CaV522U1Ju0&amp;t=550s" target="_blank" rel="noopener" aria-label="maars — talk">talk</a>
+          </span>
+        </li>
+
+        <li>
+          <span class="title">Uncertainty as a Form of Transparency: Measuring, Communicating, and Using Uncertainty</span><br>
+          <span class="authors">U. Bhatt, Y. Zhang, J. Antorán, Q.V. Liao, P. Sattigeri, R. Fogliato, G.G. Melançon, R. Krishnan, J. Stanley, O. Tickoo, L. Nachman, R. Chunara, A. Weller, A. Xiang</span><br>
+          <span class="venue">AIES 2021</span>
+          <span class="links">
+            · <a href="https://arxiv.org/abs/2011.07586" target="_blank" rel="noopener" aria-label="Uncertainty as Transparency — arXiv">arXiv</a>
+            <a href="https://dl.acm.org/doi/10.1145/3461702.3462571" target="_blank" rel="noopener" aria-label="Uncertainty as Transparency — ACM">ACM</a>
+          </span>
+        </li>
+
+        <li>
+          <span class="title">Lessons from the Deployment of an Algorithmic Tool in Child Welfare</span><br>
+          <span class="authors">Riccardo Fogliato*, Maria De-Arteaga*, Alexandra Chouldechova</span><br>
+          <span class="venue">Fair &amp; Responsible AI Workshop, CHI 2020</span>
+          <span class="links"> · <a href="http://fair-ai.owlstown.com/publications/1422" target="_blank" rel="noopener" aria-label="Lessons from Deployment — workshop">workshop</a></span>
+        </li>
+
+        <li>
+          <span class="title">A Case for Humans-in-the-Loop: Decisions in the Presence of Erroneous Algorithmic Scores</span><br>
+          <span class="authors">Maria De-Arteaga*, Riccardo Fogliato*, Alexandra Chouldechova (* co-first)</span><br>
+          <span class="venue">CHI 2020</span>
+          <span class="links">
+            · <a href="https://arxiv.org/abs/2002.08035" target="_blank" rel="noopener" aria-label="Humans-in-the-Loop — arXiv">arXiv</a>
+            <a href="https://dl.acm.org/doi/abs/10.1145/3313831.3376638" target="_blank" rel="noopener" aria-label="Humans-in-the-Loop — ACM">ACM</a>
+            <a href="https://medium.com/can-humans-catch-errors-in-risk-assessment-scores/a-case-for-humans-in-the-loop-decisions-in-the-presence-of-erroneous-algorithmic-scores-fca17379e928" target="_blank" rel="noopener" aria-label="Humans-in-the-Loop — Medium post">Medium post</a>
+          </span>
+        </li>
+
+        <li>
+          <span class="title">Fairness Evaluation in the Presence of Biased Noisy Labels</span><br>
+          <span class="authors">Riccardo Fogliato, Max G'Sell, Alexandra Chouldechova</span><br>
+          <span class="venue">AISTATS 2020</span>
+          <span class="links">
+            · <a href="https://arxiv.org/abs/2003.13808" target="_blank" rel="noopener" aria-label="Biased Noisy Labels — arXiv">arXiv</a>
+            <a href="http://proceedings.mlr.press/v108/fogliato20a.html" target="_blank" rel="noopener" aria-label="Biased Noisy Labels — PMLR">PMLR</a>
+          </span>
+        </li>
+
+        <li>
+          <span class="title">TRAP: A Predictive Framework for Trail Running Assessment of Performance</span><br>
+          <span class="authors">Riccardo Fogliato, Natalia Oliveira, Ronald Yurko</span><br>
+          <span class="venue">Journal of Quantitative Analysis in Sports</span>
+          <span class="links">
+            · <a href="https://arxiv.org/abs/2002.01328" target="_blank" rel="noopener" aria-label="TRAP — arXiv">arXiv</a>
+            <a href="https://www.degruyter.com/view/journals/jqas/ahead-of-print/article-10.1515-jqas-2020-0013/article-10.1515-jqas-2020-0013.xml" target="_blank" rel="noopener" aria-label="TRAP — JQAS">JQAS</a>
+            <a href="https://www.youtube.com/watch?v=GPjBnIwrtKE" target="_blank" rel="noopener" aria-label="TRAP — Talk at MIT SSAC">Talk @ MIT SSAC</a>
+          </span>
+          <br>
+          <span class="note">
+            <sup>†</sup> Best poster award at NESSIS 2019 and at CMSAC 2019 (1 of 4) ·
+            <a href="files/TRAP_NESSIS_19.pdf">poster</a>
+          </span>
+        </li>
+
+        <li>
+          <span class="title">Trajectories of Prescription Opioids Filled Over Time</span><br>
+          <span class="authors">J. Elmer, R. Fogliato, N. Setia, W. Mui, M. Lynch, E. Hulsey, D. Nagin</span><br>
+          <span class="venue">PLOS ONE 2019</span>
+          <span class="links"> · <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0222677" target="_blank" rel="noopener" aria-label="Opioid Trajectories — PLOS">PLOS</a></span>
+        </li>
+
+      </ul>
+    </section>
+
+    <section aria-labelledby="misc">
+      <h2 id="misc">Misc</h2>
+      <ul class="papers">
+        <li>
+          <span class="title">Why PATTERN Should Not Be Used: The Perils of Using Algorithmic Risk Assessment Tools During COVID-19</span><br>
+          <span class="authors">Riccardo Fogliato, Alice Xiang, Alexandra Chouldechova</span><br>
+          <span class="venue">Issue brief of the Partnership on AI</span>
+          <span class="links"> · <a href="http://partnershiponai.org/wp-content/uploads/2021/07/Why-PATTERN-Should-Not-Be-Used.pdf" target="_blank" rel="noopener" aria-label="Why PATTERN Should Not Be Used — issue brief">issue brief</a></span>
+        </li>
+      </ul>
+    </section>
+  </main>
+  <script>
+    (function () {
+      var btn = document.getElementById('theme-toggle');
+      if (!btn) return;
+      var root = document.documentElement;
+      function current() {
+        return root.getAttribute('data-theme') || 'light';
+      }
+      btn.addEventListener('click', function () {
+        var next = current() === 'dark' ? 'light' : 'dark';
+        root.setAttribute('data-theme', next);
+        try { localStorage.setItem('theme', next); } catch (e) {}
+      });
+    })();
+  </script>
 </body>
 </html>
-
